@@ -3,200 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dance Marathon – Alicia's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Dance Marathon - Alicia's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg-color: #c9ada1; 
+      --card-red: #a46464;
+      --text-white: #ffffff;
+      --container-width: 900px;
+    }
+
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #000000;
-      line-height: 1.6;
+      font-family: 'PT Serif', serif;
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      padding: 0 20px;
+      line-height: 1.5;
     }
 
+    /* Shared Nav */
     nav {
-      background-color: #0e0e0e;
       display: flex;
-      justify-content: flex-end;
-      gap: 2em;
-      padding: 1.5em 2em 1em;
-      font-weight: 500;
+      align-items: center;
+      padding: 2.5em 0;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+    nav::before {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
+      margin-right: 2em;
+    }
+    .nav-links { display: flex; gap: 1.5em; }
+    nav a { text-decoration: none; color: var(--text-white); font-size: 1.1em; }
+
+    /* Header & Section Styles */
+    header, section {
+      max-width: var(--container-width);
+      margin: 2em auto 4em;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #44ccff;
-      transition: 0.2s;
+    .script-font {
+      font-family: 'Homemade Apple', cursive;
+      font-size: 3.5em;
+      margin-bottom: 0.5em;
+      display: block;
     }
 
-    nav a:hover {
-      color: white;
+    h2 { font-size: 2.5em; font-weight: 400; margin-bottom: 0.5em; }
+    p { font-size: 1.15em; margin-bottom: 1.5em; }
+
+    /* Problem/Details Split */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3em;
+      align-items: start;
     }
 
-    .section {
-      max-width: 1000px;
-      margin: auto;
+    .problem-card {
+      background-color: var(--card-red);
+      padding: 2.5em;
+      border-radius: 20px;
+      border: 1px solid white;
+    }
+
+    .details-list {
+      list-style: none;
+      padding: 0;
+    }
+    .details-list li { margin-bottom: 1em; }
+    .details-list strong { display: block; font-size: 1.2em; }
+
+    /* Image Grids */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5em;
+      background-color: var(--card-red);
       padding: 2em;
-    }
-
-    .blue-box {
-      background-color: #0050b3;
-      color: white;
-      border-radius: 16px;
-      padding: 2em;
+      border-radius: 20px;
+      border: 1px solid white;
       margin-bottom: 2em;
     }
 
-    .blue-box h1 {
-      margin-top: 0;
-      font-size: 2.5em;
-    }
-
-    .sidebar {
-      float: right;
-      width: 200px;
-      margin-left: 2em;
-    }
-
-    .tools, .details {
-      margin-bottom: 1.5em;
-    }
-
-    .tools img {
-      width: 32px;
-      margin-right: 10px;
-    }
-
-    .persona-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5em;
-      margin-top: 2em;
-    }
-
-    .persona-card {
-      background-color: #e7e7e7;
-      border-radius: 12px;
-      padding: 1.2em;
-    }
-
-    .persona-card h3 {
-      margin-top: 0;
+    .image-row {
+      display: flex;
+      gap: 1em;
+      overflow-x: auto;
+      background-color: var(--card-red);
+      padding: 1.5em;
+      border-radius: 20px;
+      border: 1px solid white;
     }
 
     .placeholder {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin-bottom: 1em;
+      background: rgba(255,255,255,0.9);
+      border-radius: 10px;
+      min-height: 150px;
+      width: 100%;
     }
 
-    .sketches {
+    .mobile-mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      margin-top: 3em;
+    }
+
+    .mobile-placeholder {
+      background: #1a1a2e; /* Darker blue per your mockup */
+      aspect-ratio: 9/16;
+      border-radius: 15px;
+    }
+
+    footer {
+      max-width: var(--container-width);
+      margin: 5em auto 3em;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      margin-top: 1em;
-    }
-
-    .sketch {
-      width: 120px;
-      height: 180px;
-      background-color: #eee;
-      border: 1px solid #aaa;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-    }
-
-    h2 {
-      margin-top: 2.5em;
-    }
-
-    .footer {
-      text-align: center;
-      font-style: italic;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      padding-top: 1.5em;
       font-size: 0.9em;
-      margin: 3em 0 1em;
-      color: #666;
+    }
+
+    @media (max-width: 750px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .mobile-mockup-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html#portfolio">portfolio</a>
-  <a href="index.html#about">about</a>
-  <a href="https://drive.google.com/file/d/1CUaLtpPIA1BPl0_8W_Lb0jv9yHdyvlZW/view?usp=drive_link" target="_blank">resume</a>
-</nav>
-
-<section class="section blue-box">
-  <h1>problem</h1>
-  <p>Dance Marathon at the University of Florida participants needed a way to consolidate managing their fundraising efforts, tracking goals, earning spirit points, and staying updated on events and meetings. The DM at UF app aims to streamline these processes, fostering a more efficient and collaborative experience for its members.</p>
-</section>
-
-<section class="section">
-  <div class="sidebar">
-    <div class="tools">
-      <h4>tools</h4>
-      <p>Figma, React Native</p>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">portfolio</a>
+      <a href="index.html#about">about</a>
+      <a href="#">resume</a>
     </div>
-    <div class="details">
-      <h4>details</h4>
-      <p><strong>Duration:</strong> 11 weeks<br/>
-      <strong>Design Process:</strong> 6 weeks<br/>
-      <strong>Role:</strong> UX Designer<br/>
-      <strong>Skills:</strong> Prototyping, Figma, Iterative Design</p>
+  </nav>
+
+  <header>
+    <span class="script-font">dance marathon</span>
+    <div class="intro-grid">
+      <div class="problem-card">
+        <h2>problem</h2>
+        <p>Dance Marathon at the University of Florida participants needed a way to consolidate managing their fundraising efforts, tracking goals, earning spirit points, and staying updated on events and meetings. The DM at UF app aims to streamline these processes, fostering a more efficient and collaborative experience for its members.</p>
+      </div>
+      <div class="details-side">
+        <h2>details</h2>
+        <ul class="details-list">
+          <li><strong>tools:</strong> Figma, React Native</li>
+          <li><strong>duration:</strong> 10 weeks</li>
+          <li><strong>design process:</strong> 6 weeks</li>
+          <li><strong>role:</strong> UI Designer</li>
+          <li><strong>skills:</strong> Prototyping, Figma, User-Centered Design</li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <h2>context</h2>
-  <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors in the design process. We began by looking at the types of users that would be using the application.</p>
-
-  <div class="persona-grid">
-    <div class="persona-card">
+  <section>
+    <h2>context</h2>
+    <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors. We began by looking at the types of users that would be using the application.</p>
+    <div class="image-grid">
       <div class="placeholder"></div>
-      <h3>Miracle Makers</h3>
-      <p>Each year, students stay excited and pledge to try to raise money for Children's Miracle Network Hospitals. The app needed to offer a way to check fundraising totals, earn incentives, and access links fast.</p>
-    </div>
-    <div class="persona-card">
       <div class="placeholder"></div>
-      <h3>Emerging Leaders / Ambassadors</h3>
-      <p>Students in leadership or ambassador roles needed a platform to stay on top of meetings, check event assignments, and communicate efficiently.</p>
-    </div>
-    <div class="persona-card">
       <div class="placeholder"></div>
-      <h3>Captains</h3>
-      <p>Captains from marketing, operations, morale, and other teams needed access to event scheduling, point systems, and task coordination across committees.</p>
-    </div>
-    <div class="persona-card">
       <div class="placeholder"></div>
-      <h3>Directors</h3>
-      <p>Directors required high-level views of the different captain teams, event logistics, and user activity to guide the organization effectively.</p>
     </div>
-  </div>
+  </section>
 
-  <h2>emerging designs</h2>
-  <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and the directors of other teams and began designing with intent of development.</p>
+  <section>
+    <h2>emerging designs</h2>
+    <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and began designing with intent of development.</p>
+    <div class="image-row">
+      <div class="placeholder" style="min-width: 150px;"></div>
+      <div class="placeholder" style="min-width: 150px;"></div>
+      <div class="placeholder" style="min-width: 150px;"></div>
+      <div class="placeholder" style="min-width: 150px;"></div>
+      <div class="placeholder" style="min-width: 150px;"></div>
+    </div>
+  </section>
 
-  <div class="sketches">
-    <div class="sketch">Fundraise</div>
-    <div class="sketch">Calendar</div>
-    <div class="sketch">Events</div>
-    <div class="sketch">Spirit</div>
-    <div class="sketch">Points</div>
-    <div class="sketch">Home</div>
-  </div>
+  <section>
+    <div class="problem-card" style="margin-bottom: 4em;">
+      <h2>iterative design</h2>
+      <p>Due to the time crunch and the high expectations, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype and give feedback. This cycle continued until refinements were launched.</p>
+    </div>
 
-  <h2 class="blue-box">iterative design</h2>
-  <p>Due to the time crunch and the high expectation of reach that we were expected to meet, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype, give me feedback, and I would implement what I deemed necessary. This cycle continued until no refinements were immediately necessary. With my designs, the developers on my team created and launched DM at UF.</p>
-</section>
+    <div class="mobile-mockup-grid">
+      <div class="mobile-placeholder"></div>
+      <div class="mobile-placeholder"></div>
+      <div class="mobile-placeholder"></div>
+      <div class="mobile-placeholder"></div>
+      <div class="mobile-placeholder"></div>
+      <div class="mobile-placeholder"></div>
+    </div>
+  </section>
 
-<footer class="footer">
-  thanks for reading! &nbsp; &copy; 2025 alicia grant
-</footer>
+  <section>
+    <h2>reflection</h2>
+    <p>The app was soft-launched on the day of the main event—April 13, 2024—with over 400 users. It performed effectively and the designs were well received by miracle makers, captains, and directors. As a designer, I gained real-world experience in delivering under a tight deadline.</p>
+  </section>
+
+  <footer>
+    <span>thanks for dropping in!</span>
+    <span>&copy; 2025 alicia grant</span>
+  </footer>
 
 </body>
 </html>
-
