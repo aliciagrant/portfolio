@@ -18,7 +18,8 @@
       --card-brown-dark: #6e4132;
       --about-bg: #e28a8a; 
       --text-white: #ffffff;
-      --container-width: 800px;
+      /* Reverted to the wider 900px layout */
+      --container-width: 900px;
     }
 
     body {
@@ -31,7 +32,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation */
+    /* Navigation - Line in-line with links */
     nav {
       display: flex;
       align-items: center;
@@ -57,6 +58,11 @@
       text-decoration: none;
       color: var(--text-white);
       font-size: 1.1em;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
     }
 
     /* Header */
@@ -79,8 +85,10 @@
     header p {
       font-size: 1.25em;
       margin-top: 0.4em;
+      font-style: normal; 
+      /* Maintained the shift past the 'y' */
       padding-left: 100px; 
-      max-width: 650px;
+      max-width: 750px;
     }
 
     /* Projects List */
@@ -89,13 +97,13 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2em;
+      gap: 2.5em;
     }
 
     .card {
       border-radius: 20px;
-      /* REDUCED HEIGHT: Lowered vertical padding from 2.5em to 1.5em */
-      padding: 1.5em 2.5em; 
+      /* Narrower height (1.5em vertical padding) */
+      padding: 1.5em 2.5em;
       text-decoration: none;
       color: white;
       border: 1px solid white;
@@ -113,7 +121,7 @@
 
     .image-placeholder {
       width: 100%;
-      /* REDUCED HEIGHT: Lowered height from 300px to 220px */
+      /* Narrower image height */
       height: 220px; 
       border: 1.2px solid white;
       border-radius: 12px;
@@ -121,7 +129,7 @@
     }
 
     .card h2 { margin: 0; font-size: 1.8em; font-weight: 400; }
-    .card p { margin: 0.4em 0 0; font-size: 1.05em; opacity: 0.9; }
+    .card p { margin: 0.4em 0 0; font-size: 1.1em; opacity: 0.95; }
 
     /* About Section */
     .about-section {
@@ -142,11 +150,11 @@
 
     .about-section p {
       line-height: 1.6;
-      font-size: 1.15em;
+      font-size: 1.2em;
       margin-bottom: 1.5em;
     }
 
-    /* Buttons with Icons */
+    /* Buttons */
     .buttons {
       display: flex;
       gap: 1em;
@@ -156,7 +164,7 @@
 
     .btn {
       border: 1px solid white;
-      padding: 0.6em 1.2em;
+      padding: 0.6em 1.5em;
       border-radius: 12px;
       color: white;
       text-decoration: none;
@@ -177,10 +185,9 @@
       margin: 5em auto 3em;
       display: flex;
       justify-content: space-between;
-      font-size: 0.9em;
+      font-size: 1em;
       border-top: 1px solid rgba(255, 255, 255, 0.4);
       padding-top: 1.5em;
-      font-style: italic;
     }
 
     @media (max-width: 700px) {
