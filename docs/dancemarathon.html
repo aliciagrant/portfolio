@@ -16,12 +16,11 @@
 
     body {
       margin: 0;
-      font-family: 'PT Serif', 'Times New Roman', Times, serif;
+      font-family: 'PT Serif', serif;
       background-color: var(--bg-color);
       color: var(--text-white);
       padding: 0 20px;
-      line-height: 1.5;
-      /* FIX: Explicitly set regular weight for the whole page */
+      line-height: 1.4;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
     }
@@ -44,42 +43,29 @@
     .nav-links { display: flex; gap: 1.5em; }
     nav a { text-decoration: none; color: var(--text-white); font-size: 1.1em; }
 
-    /* Header & Section Styles */
+    /* Layout Containers */
     header, section {
       max-width: var(--container-width);
-      margin: 2em auto 4em;
+      margin: 0 auto 5em;
     }
 
+    /* Typography */
     .script-font {
       font-family: 'Homemade Apple', cursive;
       font-size: 3.5em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.8em;
       display: block;
-      font-weight: 400; /* Ensure the cursive isn't forced bold */
+      font-weight: 400;
     }
 
-    h2 { 
-      font-size: 2.5em; 
-      font-weight: 400; /* Un-bolding headers */
-      margin: 0 0 0.5em 0; 
-    }
+    h2 { font-size: 2.8em; font-weight: 400; margin: 0 0 0.4em 0; }
+    p { font-size: 1.1em; margin-bottom: 1.5em; max-width: 800px; }
 
-    p { 
-      font-size: 1.15em; 
-      margin-bottom: 1.5em; 
-      font-weight: 400; 
-    }
-
-    /* Bold only what you explicitly want bold */
-    strong {
-      font-weight: 700;
-    }
-
-    /* Problem/Details Split */
+    /* The Problem & Details Grid */
     .intro-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 3em;
+      grid-template-columns: 1.8fr 1fr; /* Problem is larger than Details */
+      gap: 4em;
       align-items: start;
     }
 
@@ -90,78 +76,90 @@
       border: 1px solid white;
     }
 
+    .problem-card h2 { font-size: 2.4em; }
+
+    .details-side {
+      padding-top: 10px;
+    }
+
+    .details-side h2 { font-size: 2.4em; margin-bottom: 1em; }
+
     .details-list {
       list-style: none;
       padding: 0;
     }
-    .details-list li { margin-bottom: 1.5em; }
-    .details-list strong { 
-      display: block; 
-      font-size: 1.1em; 
-      margin-bottom: 0.2em;
-      opacity: 0.8;
-      font-weight: 400; /* Keeps labels light per mockup */
-    }
-    .details-content {
-      font-size: 1.2em;
+
+    .details-list li {
+      margin-bottom: 1.8em;
+      font-size: 1.1em;
     }
 
-    /* Image Grids */
-    .image-grid {
+    .details-label {
+      display: block;
+      font-size: 0.95em;
+      opacity: 0.85;
+      margin-bottom: 0.2em;
+    }
+
+    /* Image Containers */
+    .image-container-bg {
+      background-color: var(--card-red);
+      padding: 2.5em;
+      border-radius: 20px;
+      border: 1px solid white;
+      margin-top: 1.5em;
+    }
+
+    /* 2x2 Grid for Context */
+    .context-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5em;
-      background-color: var(--card-red);
-      padding: 2em;
-      border-radius: 20px;
-      border: 1px solid white;
-      margin-bottom: 2em;
     }
 
-    .image-row {
+    /* Horizontal Row for Emerging Designs */
+    .design-row {
       display: flex;
-      gap: 1em;
+      gap: 1.2em;
       overflow-x: auto;
-      background-color: var(--card-red);
-      padding: 1.5em;
-      border-radius: 20px;
-      border: 1px solid white;
     }
 
-    .placeholder {
-      background: rgba(255,255,255,0.9);
-      border-radius: 10px;
-      min-height: 150px;
-      width: 100%;
-    }
-
-    .mobile-mockup-grid {
+    /* Mobile Mockup Grid - 3 per row */
+    .mockup-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2em;
+      gap: 2.5em;
       margin-top: 3em;
     }
 
-    .mobile-placeholder {
-      background: #1a1a2e; /* Dark navy blue from mockup */
-      aspect-ratio: 9/16;
-      border-radius: 15px;
+    .placeholder {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      min-height: 160px;
+      width: 100%;
+    }
+
+    .mobile-mock {
+      background: #1a1a2e; /* Dark navy from vision */
+      aspect-ratio: 9/19;
+      border-radius: 20px;
+      width: 100%;
     }
 
     footer {
       max-width: var(--container-width);
-      margin: 5em auto 3em;
+      margin: 6em auto 3em;
       display: flex;
       justify-content: space-between;
       border-top: 1px solid rgba(255, 255, 255, 0.4);
       padding-top: 1.5em;
-      font-size: 0.95em;
+      font-size: 0.9em;
       font-style: italic;
     }
 
-    @media (max-width: 750px) {
-      .intro-grid { grid-template-columns: 1fr; }
-      .mobile-mockup-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 800px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 2em; }
+      .mockup-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -182,59 +180,64 @@
         <h2>problem</h2>
         <p>Dance Marathon at the University of Florida participants needed a way to consolidate managing their fundraising efforts, tracking goals, earning spirit points, and staying updated on events and meetings. The DM at UF app aims to streamline these processes, fostering a more efficient and collaborative experience for its members.</p>
       </div>
+      
       <div class="details-side">
         <h2>details</h2>
         <ul class="details-list">
-          <li><strong>tools:</strong> <span class="details-content">Figma, React Native</span></li>
-          <li><strong>duration:</strong> <span class="details-content">10 weeks</span></li>
-          <li><strong>design process:</strong> <span class="details-content">6 weeks</span></li>
-          <li><strong>role:</strong> <span class="details-content">UI Designer</span></li>
-          <li><strong>skills:</strong> <span class="details-content">Prototyping, Figma</span></li>
+          <li><span class="details-label">tools:</span> Figma, React Native</li>
+          <li><span class="details-label">duration:</span> 10 weeks</li>
+          <li><span class="details-label">design process:</span> 6 weeks</li>
+          <li><span class="details-label">role:</span> UI Designer</li>
+          <li><span class="details-label">skills:</span> Prototyping, Figma</li>
         </ul>
       </div>
     </div>
   </header>
 
-  <section>
+  <section id="context">
     <h2>context</h2>
     <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors. We began by looking at the types of users that would be using the application.</p>
-    <div class="image-grid">
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
+    <div class="image-container-bg">
+      <div class="context-grid">
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section id="designs">
     <h2>emerging designs</h2>
     <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and began designing with intent of development.</p>
-    <div class="image-row">
-      <div class="placeholder" style="min-width: 150px;"></div>
-      <div class="placeholder" style="min-width: 150px;"></div>
-      <div class="placeholder" style="min-width: 150px;"></div>
-      <div class="placeholder" style="min-width: 150px;"></div>
-      <div class="placeholder" style="min-width: 150px;"></div>
+    <div class="image-container-bg">
+      <div class="design-row">
+        <div class="placeholder" style="min-width: 140px;"></div>
+        <div class="placeholder" style="min-width: 140px;"></div>
+        <div class="placeholder" style="min-width: 140px;"></div>
+        <div class="placeholder" style="min-width: 140px;"></div>
+        <div class="placeholder" style="min-width: 140px;"></div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="problem-card" style="margin-bottom: 4em;">
+  <section id="iteration">
+    <div class="problem-card">
       <h2>iterative design</h2>
       <p>Due to the time crunch and the high expectations, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype and give feedback. This cycle continued until refinements were launched.</p>
     </div>
 
-    <div class="mobile-mockup-grid">
-      <div class="mobile-placeholder"></div>
-      <div class="mobile-placeholder"></div>
-      <div class="mobile-placeholder"></div>
-      <div class="mobile-placeholder"></div>
-      <div class="mobile-placeholder"></div>
-      <div class="mobile-placeholder"></div>
+    <div class="mockup-grid">
+      <div class="mobile-mock"></div>
+      <div class="mobile-mock"></div>
+      <div class="mobile-mock"></div>
+      <div class="mobile-mock"></div>
+      <div class="mobile-mock"></div>
+      <div class="mobile-mock"></div>
     </div>
   </section>
 
-  <section>
+  <section id="reflection">
     <h2>reflection</h2>
     <p>The app was soft-launched on the day of the main event—April 13, 2024—with over 400 users. It performed effectively and the designs were well received by miracle makers, captains, and directors. As a designer, I gained real-world experience in delivering under a tight deadline.</p>
   </section>
