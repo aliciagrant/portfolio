@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dance Marathon - Alicia's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
+
   <style>
     html { scroll-behavior: smooth; }
     :root {
@@ -20,12 +21,12 @@
       background-color: var(--bg-color);
       color: var(--text-white);
       padding: 0 20px;
-      line-height: 1.4;
+      line-height: 1.45;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Shared Nav */
+    /* NAV */
     nav {
       display: flex;
       align-items: center;
@@ -43,47 +44,62 @@
     .nav-links { display: flex; gap: 1.5em; }
     nav a { text-decoration: none; color: var(--text-white); font-size: 1.1em; }
 
-    /* Layout Containers */
+    /* Sections */
     header, section {
       max-width: var(--container-width);
-      margin: 0 auto 6em; /* Increased spacing between sections */
+      margin: 0 auto 6em;
     }
 
     /* Typography */
     .script-font {
       font-family: 'Homemade Apple', cursive;
       font-size: 4em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.4em;
       display: block;
       font-weight: 400;
     }
 
-    h2 { font-size: 3em; font-weight: 400; margin: 0 0 0.5em 0; }
-    p { font-size: 1.15em; margin-bottom: 1.5em; max-width: 850px; }
+    h2 {
+      font-size: 3em;
+      font-weight: 400;
+      margin: 0 0 0.5em 0;
+    }
 
-    /* The Problem & Details Grid */
+    p {
+      font-size: 1.15em;
+      margin-bottom: 1.3em;
+      max-width: 850px;
+      line-height: 1.45;
+    }
+
+    /* INTRO GRID (Problem + Details) */
     .intro-grid {
       display: grid;
-      grid-template-columns: 550px 1fr; /* Exact width for the problem card */
-      gap: 5em;
+      grid-template-columns: 1fr 1fr; /* more fluid for text */
+      gap: 3em;
       align-items: start;
       margin-bottom: 6em;
     }
 
-    .problem-card {
+    /* Universal panel styling */
+    .panel {
       background-color: var(--card-red);
-      padding: 3em;
+      padding: 1.6em 2em; /* reduced padding */
       border-radius: 20px;
       border: 1px solid white;
+      line-height: 1.35;
     }
 
-    .problem-card h2 { font-size: 2.5em; margin-bottom: 0.8em; }
-
-    .details-side {
-      padding-top: 0; /* Align exactly with the top of the problem card */
+    .panel h2 {
+      font-size: 2.3em;
+      margin-bottom: 0.6em;
     }
 
-    .details-side h2 { font-size: 2.5em; margin-bottom: 1.2em; }
+    /* DETAILS */
+    .details-side h2 {
+      font-size: 2.3em;
+      margin-bottom: 0.8em;
+    }
 
     .details-list {
       list-style: none;
@@ -92,19 +108,19 @@
     }
 
     .details-list li {
-      margin-bottom: 0.8em;  /* reduced space between list items */
+      margin-bottom: 0.6em;
       font-size: 1.1em;
-      line-height: 1.2;      /* tighter lines inside each item */
+      line-height: 1.2;
     }
 
     .details-label {
       display: block;
       font-size: 0.9em;
-      opacity: 0.8;
-      margin-bottom: 0.15em; /* tighter spacing between label and value */
+      opacity: 0.85;
+      margin-bottom: 0.1em;
     }
 
-    /* Image Containers */
+    /* Image containers */
     .image-container-bg {
       background-color: var(--card-red);
       padding: 3em;
@@ -119,6 +135,7 @@
       gap: 2em;
     }
 
+    /* Design row */
     .design-row {
       display: flex;
       gap: 1.5em;
@@ -132,6 +149,7 @@
       margin-top: 3em;
     }
 
+    /* Placeholder blocks */
     .placeholder {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
@@ -140,7 +158,7 @@
     }
 
     .mobile-mock {
-      background: #151520; /* Darker navy to match vision */
+      background: #151520;
       aspect-ratio: 9/19;
       border-radius: 25px;
       width: 100%;
@@ -157,12 +175,14 @@
     }
 
     @media (max-width: 900px) {
-      .intro-grid { grid-template-columns: 1fr; gap: 3em; }
-      .details-side { order: 2; }
-      .problem-card { order: 1; }
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2em;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -175,8 +195,9 @@
 
   <header>
     <span class="script-font">dance marathon</span>
+
     <div class="intro-grid">
-      <div class="problem-card">
+      <div class="panel">
         <h2>problem</h2>
         <p>Dance Marathon at the University of Florida participants needed a way to consolidate managing their fundraising efforts, tracking goals, earning spirit points, and staying updated on events and meetings. The DM at UF app aims to streamline these processes, fostering a more efficient and collaborative experience for its members.</p>
       </div>
@@ -187,7 +208,7 @@
           <li><span class="details-label">tools:</span> Figma, React Native</li>
           <li><span class="details-label">duration:</span> 10 weeks</li>
           <li><span class="details-label">design process:</span> 6 weeks</li>
-          <li><span class="details-label">role:</span> UI Designer</li>
+          <li><span class="details-label">role:</span> UX Designer</li>
           <li><span class="details-label">skills:</span> Prototyping, Figma</li>
         </ul>
       </div>
@@ -196,7 +217,8 @@
 
   <section>
     <h2>context</h2>
-    <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors. We began by looking at the types of users that would be using the application.</p>
+    <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors in the design process. We began by looking at the types of users that would be using the application.</p>
+
     <div class="image-container-bg">
       <div class="context-grid">
         <div class="placeholder"></div>
@@ -209,7 +231,8 @@
 
   <section>
     <h2>emerging designs</h2>
-    <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and began designing with intent of development.</p>
+    <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and the directors of other teams and began designing with intent of development.</p>
+
     <div class="image-container-bg">
       <div class="design-row">
         <div class="placeholder" style="min-width: 150px;"></div>
@@ -222,9 +245,9 @@
   </section>
 
   <section>
-    <div class="problem-card">
+    <div class="panel">
       <h2>iterative design</h2>
-      <p>Due to the time crunch and the high expectations, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype and give feedback. This cycle continued until refinements were launched.</p>
+      <p>Due to the time crunch and the high expectation of reach that we were expected to meet, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype, give me feedback, and I would implement what I deemed necessary. This cycle continued until no refinements were immediately necessary. With my designs, the developers on my team created and launched DM at UF.</p>
     </div>
 
     <div class="mockup-grid">
@@ -239,7 +262,7 @@
 
   <section>
     <h2>reflection</h2>
-    <p>The app was soft-launched on the day of the main event—April 13, 2024—with over 400 users. It performed effectively and the designs were well received by miracle makers, captains, and directors. As a designer, I gained real-world experience in delivering under a tight deadline.</p>
+    <p>The app was soft-launched on the day of the main event—April 13, 2023. With over 400 users, it performed effectively, and the designs were well received by miracle makers, captains, directors, ambassadors, and emerging leaders. As a UX designer, I gained valuable real-world experience and learned how to deliver under a tight deadline. In the future, I aim to apply the skills I've developed as a computer science student to implement my designs with code, complementing my prototyping abilities.</p>
   </section>
 
   <footer>
