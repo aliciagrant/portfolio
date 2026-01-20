@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alicia's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* Smooth scrolling enabled here */
     html {
       scroll-behavior: smooth;
     }
@@ -18,7 +18,6 @@
       --card-brown-dark: #6e4132;
       --about-bg: #e28a8a; 
       --text-white: #ffffff;
-      /* Adjusted width for a narrower, more balanced look */
       --container-width: 800px;
     }
 
@@ -32,7 +31,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation - Line in-line with links */
+    /* Navigation */
     nav {
       display: flex;
       align-items: center;
@@ -58,11 +57,6 @@
       text-decoration: none;
       color: var(--text-white);
       font-size: 1.1em;
-      transition: opacity 0.2s;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
     }
 
     /* Header */
@@ -85,9 +79,8 @@
     header p {
       font-size: 1.25em;
       margin-top: 0.4em;
-      font-style: normal; 
       padding-left: 100px; 
-      max-width: 650px; /* Narrowed text width to match name shift */
+      max-width: 650px;
     }
 
     /* Projects List */
@@ -96,12 +89,13 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.5em;
+      gap: 2em;
     }
 
     .card {
       border-radius: 20px;
-      padding: 2.5em;
+      /* REDUCED HEIGHT: Lowered vertical padding from 2.5em to 1.5em */
+      padding: 1.5em 2.5em; 
       text-decoration: none;
       color: white;
       border: 1px solid white;
@@ -119,14 +113,15 @@
 
     .image-placeholder {
       width: 100%;
-      height: 300px; /* Slightly shorter to match narrower width */
+      /* REDUCED HEIGHT: Lowered height from 300px to 220px */
+      height: 220px; 
       border: 1.2px solid white;
       border-radius: 12px;
-      margin-bottom: 1.8em;
+      margin-bottom: 1.2em;
     }
 
     .card h2 { margin: 0; font-size: 1.8em; font-weight: 400; }
-    .card p { margin: 0.6em 0 0; font-size: 1.1em; }
+    .card p { margin: 0.4em 0 0; font-size: 1.05em; opacity: 0.9; }
 
     /* About Section */
     .about-section {
@@ -151,7 +146,7 @@
       margin-bottom: 1.5em;
     }
 
-    /* Buttons */
+    /* Buttons with Icons */
     .buttons {
       display: flex;
       gap: 1em;
@@ -161,11 +156,14 @@
 
     .btn {
       border: 1px solid white;
-      padding: 0.6em 1.5em;
+      padding: 0.6em 1.2em;
       border-radius: 12px;
       color: white;
       text-decoration: none;
       font-size: 1.05em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       transition: background 0.2s;
     }
 
@@ -179,9 +177,10 @@
       margin: 5em auto 3em;
       display: flex;
       justify-content: space-between;
-      font-size: 1em;
+      font-size: 0.9em;
       border-top: 1px solid rgba(255, 255, 255, 0.4);
       padding-top: 1.5em;
+      font-style: italic;
     }
 
     @media (max-width: 700px) {
@@ -199,7 +198,7 @@
     <div class="nav-links">
       <a href="#portfolio">portfolio</a>
       <a href="#about">about</a>
-      <a href="resume.pdf" target="_blank">resume</a>
+      <a href="#">resume</a>
     </div>
   </nav>
 
@@ -237,9 +236,15 @@
     <p>Outside of my academic pursuits, I enjoy reading, writing music, and spending quality time with my little sister and friends.</p>
     
     <div class="buttons">
-      <a href="https://linkedin.com/in/alicia-f-grant/" target="_blank" class="btn">linkedin</a>
-      <a href="resume.pdf" target="_blank" class="btn">resume</a>
-      <a href="mailto:alicia.f.grant@gmail.com" class="btn">email</a>
+      <a href="https://linkedin.com/in/alicia-f-grant/" target="_blank" class="btn">
+        <i class="fab fa-linkedin"></i> linkedin
+      </a>
+      <a href="#" target="_blank" class="btn">
+        <i class="far fa-file-alt"></i> resume
+      </a>
+      <a href="mailto:alicia.f.grant@gmail.com" class="btn">
+        <i class="far fa-envelope"></i> email
+      </a>
     </div>
   </section>
 
