@@ -16,11 +16,14 @@
 
     body {
       margin: 0;
-      font-family: 'PT Serif', serif;
+      font-family: 'PT Serif', 'Times New Roman', Times, serif;
       background-color: var(--bg-color);
       color: var(--text-white);
       padding: 0 20px;
       line-height: 1.5;
+      /* FIX: Explicitly set regular weight for the whole page */
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Shared Nav */
@@ -52,10 +55,25 @@
       font-size: 3.5em;
       margin-bottom: 0.5em;
       display: block;
+      font-weight: 400; /* Ensure the cursive isn't forced bold */
     }
 
-    h2 { font-size: 2.5em; font-weight: 400; margin-bottom: 0.5em; }
-    p { font-size: 1.15em; margin-bottom: 1.5em; }
+    h2 { 
+      font-size: 2.5em; 
+      font-weight: 400; /* Un-bolding headers */
+      margin: 0 0 0.5em 0; 
+    }
+
+    p { 
+      font-size: 1.15em; 
+      margin-bottom: 1.5em; 
+      font-weight: 400; 
+    }
+
+    /* Bold only what you explicitly want bold */
+    strong {
+      font-weight: 700;
+    }
 
     /* Problem/Details Split */
     .intro-grid {
@@ -76,8 +94,17 @@
       list-style: none;
       padding: 0;
     }
-    .details-list li { margin-bottom: 1em; }
-    .details-list strong { display: block; font-size: 1.2em; }
+    .details-list li { margin-bottom: 1.5em; }
+    .details-list strong { 
+      display: block; 
+      font-size: 1.1em; 
+      margin-bottom: 0.2em;
+      opacity: 0.8;
+      font-weight: 400; /* Keeps labels light per mockup */
+    }
+    .details-content {
+      font-size: 1.2em;
+    }
 
     /* Image Grids */
     .image-grid {
@@ -116,7 +143,7 @@
     }
 
     .mobile-placeholder {
-      background: #1a1a2e; /* Darker blue per your mockup */
+      background: #1a1a2e; /* Dark navy blue from mockup */
       aspect-ratio: 9/16;
       border-radius: 15px;
     }
@@ -128,7 +155,8 @@
       justify-content: space-between;
       border-top: 1px solid rgba(255, 255, 255, 0.4);
       padding-top: 1.5em;
-      font-size: 0.9em;
+      font-size: 0.95em;
+      font-style: italic;
     }
 
     @media (max-width: 750px) {
@@ -157,11 +185,11 @@
       <div class="details-side">
         <h2>details</h2>
         <ul class="details-list">
-          <li><strong>tools:</strong> Figma, React Native</li>
-          <li><strong>duration:</strong> 10 weeks</li>
-          <li><strong>design process:</strong> 6 weeks</li>
-          <li><strong>role:</strong> UI Designer</li>
-          <li><strong>skills:</strong> Prototyping, Figma, User-Centered Design</li>
+          <li><strong>tools:</strong> <span class="details-content">Figma, React Native</span></li>
+          <li><strong>duration:</strong> <span class="details-content">10 weeks</span></li>
+          <li><strong>design process:</strong> <span class="details-content">6 weeks</span></li>
+          <li><strong>role:</strong> <span class="details-content">UI Designer</span></li>
+          <li><strong>skills:</strong> <span class="details-content">Prototyping, Figma</span></li>
         </ul>
       </div>
     </div>
