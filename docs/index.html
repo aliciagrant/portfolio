@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alicia's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #c9ada1; 
@@ -17,12 +17,12 @@
 
     body {
       margin: 0;
-      /* This line sets the Times New Roman-like font globally */
-      font-family: 'EB Garamond', 'Times New Roman', Times, serif;
+      /* Using PT Serif as the primary font */
+      font-family: 'PT Serif', 'Times New Roman', Times, serif;
       background-color: var(--bg-color);
       color: var(--text-white);
       padding: 0 20px;
-      line-height: 1.5;
+      line-height: 1.4;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -31,10 +31,10 @@
       display: flex;
       justify-content: flex-end;
       gap: 1.5em;
-      padding: 2.5em 0;
-      max-width: 800px;
+      padding: 2em 0;
+      max-width: 900px;
       margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.4); /* Line at the top per design */
+      border-top: 1px solid rgba(255,255,255,0.4);
       margin-top: 20px;
     }
 
@@ -42,13 +42,12 @@
       text-decoration: none;
       color: var(--text-white);
       font-size: 1.1em;
-      opacity: 0.9;
     }
 
     /* Header */
     header {
-      max-width: 800px;
-      margin: 3em auto;
+      max-width: 900px;
+      margin: 2em auto 4em;
     }
 
     .script-font {
@@ -57,21 +56,23 @@
     }
 
     header h1 {
-      font-size: 3.5em;
+      font-size: 3.8em;
       margin: 0;
       font-weight: normal;
-      letter-spacing: -1px;
     }
 
+    /* Shifting text past the 'y' */
     header p {
-      font-size: 1.2em;
-      margin-top: 0.2em;
-      font-style: italic; /* Matches the cozy vibe */
+      font-size: 1.25em;
+      margin-top: 0.4em;
+      font-style: normal; /* No italics */
+      padding-left: 100px; /* Adjust this to line up with the end of your name */
+      max-width: 750px;
     }
 
     /* Projects List */
     .project-list {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -84,7 +85,7 @@
       text-decoration: none;
       color: white;
       transition: transform 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .card:hover { transform: translateY(-5px); }
@@ -94,23 +95,21 @@
 
     .image-placeholder {
       width: 100%;
-      height: 280px;
-      border: 1.5px solid white;
+      height: 320px;
+      border: 1.2px solid white;
       border-radius: 12px;
-      margin-bottom: 1.5em;
+      margin-bottom: 1.8em;
     }
 
     .card h2 { 
       margin: 0; 
       font-size: 2em; 
       font-weight: 400;
-      letter-spacing: 0.02em;
     }
 
     .card p { 
       margin: 0.6em 0 0; 
-      font-size: 1.05em; 
-      opacity: 0.95; 
+      font-size: 1.1em; 
     }
 
     /* About Section */
@@ -118,34 +117,28 @@
       background-color: var(--about-bg);
       border-radius: 20px;
       padding: 3.5em;
-      max-width: 800px;
+      max-width: 900px;
       margin: 5em auto;
       box-sizing: border-box;
     }
 
     .about-section h2 {
       font-size: 3.5em;
-      margin-top: 0;
-      margin-bottom: 0.5em;
+      margin: 0 0 0.4em 0;
       font-weight: normal;
     }
 
     .about-section p {
-      line-height: 1.7;
-      font-size: 1.15em;
-      margin-bottom: 1.5em;
-    }
-
-    .about-section strong {
-      font-weight: 600;
+      line-height: 1.6;
+      font-size: 1.2em;
+      margin-bottom: 1.2em;
     }
 
     /* Buttons */
     .buttons {
       display: flex;
-      gap: 1.2em;
+      gap: 1em;
       margin-top: 2.5em;
-      flex-wrap: wrap;
     }
 
     .btn {
@@ -154,33 +147,24 @@
       border-radius: 12px;
       color: white;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      font-size: 1.1em;
-      transition: background 0.2s;
-    }
-
-    .btn:hover {
-      background: rgba(255,255,255,0.15);
+      font-size: 1.05em;
     }
 
     /* Footer */
     footer {
-      max-width: 800px;
+      max-width: 900px;
       margin: 5em auto 3em;
       display: flex;
       justify-content: space-between;
-      font-size: 0.95em;
-      opacity: 0.8;
+      font-size: 1em;
       border-top: 1px solid rgba(255,255,255,0.4);
       padding-top: 1.5em;
-      font-style: italic;
     }
 
-    @media (max-width: 600px) {
-      .about-section { padding: 2em 1.5em; }
-      header h1 { font-size: 2.5em; }
-      nav { justify-content: center; font-size: 0.9em; }
+    @media (max-width: 700px) {
+      header p { padding-left: 0; }
+      header h1 { font-size: 2.8em; }
+      .about-section { padding: 2em; }
     }
   </style>
 </head>
@@ -220,14 +204,12 @@
 
   <section class="about-section" id="about">
     <h2 class="script-font">about me</h2>
-    <p>I am a <strong>Computer Science</strong> student at the University of Florida with a minor in <strong>Psychology</strong>, aspiring to grow in user experience design and product management. My goal is to enhance my UI/UX, technical, and product strategy skill sets through meaningful opportunities.</p>
-    
-    <p>The "skip intro" button, after hours of binge-watching TV, sparked more than just a moment of appreciation—it was a realization. This small feature inspired me to pursue UX design, showing me how impactful and thoughtful design can improve everyday experiences.</p>
+    <p>I am a <strong>Computer Science</strong> student at the University of Florida with a minor in <strong>Psychology</strong>, aspiring to grow in user experience design and product management.</p>
     
     <div class="buttons">
-      <a href="https://linkedin.com" class="btn">linkedin</a>
+      <a href="#" class="btn">linkedin</a>
       <a href="#" class="btn">resume</a>
-      <a href="mailto:email@example.com" class="btn">email</a>
+      <a href="#" class="btn">email</a>
     </div>
   </section>
 
