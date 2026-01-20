@@ -46,120 +46,119 @@
     /* Layout Containers */
     header, section {
       max-width: var(--container-width);
-      margin: 0 auto 5em;
+      margin: 0 auto 6em; /* Increased spacing between sections */
     }
 
     /* Typography */
     .script-font {
       font-family: 'Homemade Apple', cursive;
-      font-size: 3.5em;
-      margin-bottom: 0.8em;
+      font-size: 4em;
+      margin-bottom: 0.5em;
       display: block;
       font-weight: 400;
     }
 
-    h2 { font-size: 2.8em; font-weight: 400; margin: 0 0 0.4em 0; }
-    p { font-size: 1.1em; margin-bottom: 1.5em; max-width: 800px; }
+    h2 { font-size: 3em; font-weight: 400; margin: 0 0 0.5em 0; }
+    p { font-size: 1.15em; margin-bottom: 1.5em; max-width: 850px; }
 
     /* The Problem & Details Grid */
     .intro-grid {
       display: grid;
-      grid-template-columns: 1.8fr 1fr; /* Problem is larger than Details */
-      gap: 4em;
+      grid-template-columns: 550px 1fr; /* Exact width for the problem card */
+      gap: 5em;
       align-items: start;
+      margin-bottom: 6em;
     }
 
     .problem-card {
       background-color: var(--card-red);
-      padding: 2.5em;
+      padding: 3em;
       border-radius: 20px;
       border: 1px solid white;
     }
 
-    .problem-card h2 { font-size: 2.4em; }
+    .problem-card h2 { font-size: 2.5em; margin-bottom: 0.8em; }
 
     .details-side {
-      padding-top: 10px;
+      padding-top: 0; /* Align exactly with the top of the problem card */
     }
 
-    .details-side h2 { font-size: 2.4em; margin-bottom: 1em; }
+    .details-side h2 { font-size: 2.5em; margin-bottom: 1.2em; }
 
     .details-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     .details-list li {
-      margin-bottom: 1.8em;
+      margin-bottom: 2em;
       font-size: 1.1em;
     }
 
     .details-label {
       display: block;
-      font-size: 0.95em;
-      opacity: 0.85;
-      margin-bottom: 0.2em;
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin-bottom: 0.3em;
     }
 
     /* Image Containers */
     .image-container-bg {
       background-color: var(--card-red);
-      padding: 2.5em;
+      padding: 3em;
       border-radius: 20px;
       border: 1px solid white;
-      margin-top: 1.5em;
+      margin-top: 2em;
     }
 
-    /* 2x2 Grid for Context */
     .context-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5em;
+      gap: 2em;
     }
 
-    /* Horizontal Row for Emerging Designs */
     .design-row {
       display: flex;
-      gap: 1.2em;
+      gap: 1.5em;
       overflow-x: auto;
     }
 
-    /* Mobile Mockup Grid - 3 per row */
     .mockup-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5em;
+      gap: 2em;
       margin-top: 3em;
     }
 
     .placeholder {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
-      min-height: 160px;
+      min-height: 200px;
       width: 100%;
     }
 
     .mobile-mock {
-      background: #1a1a2e; /* Dark navy from vision */
+      background: #151520; /* Darker navy to match vision */
       aspect-ratio: 9/19;
-      border-radius: 20px;
+      border-radius: 25px;
       width: 100%;
     }
 
     footer {
       max-width: var(--container-width);
-      margin: 6em auto 3em;
+      margin: 8em auto 4em;
       display: flex;
       justify-content: space-between;
       border-top: 1px solid rgba(255, 255, 255, 0.4);
-      padding-top: 1.5em;
+      padding-top: 2em;
       font-size: 0.9em;
-      font-style: italic;
     }
 
-    @media (max-width: 800px) {
-      .intro-grid { grid-template-columns: 1fr; gap: 2em; }
-      .mockup-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 900px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 3em; }
+      .details-side { order: 2; }
+      .problem-card { order: 1; }
     }
   </style>
 </head>
@@ -194,7 +193,7 @@
     </div>
   </header>
 
-  <section id="context">
+  <section>
     <h2>context</h2>
     <p>The DM at UF app was expected to be designed, developed, and fully functional within just three months to support over 1,500 members, making the project timeline and scalability critical factors. We began by looking at the types of users that would be using the application.</p>
     <div class="image-container-bg">
@@ -207,21 +206,21 @@
     </div>
   </section>
 
-  <section id="designs">
+  <section>
     <h2>emerging designs</h2>
     <p>With tangible users and their concerns in mind, a base for the application was made. As a captain on the digital marketing team, I presented the rough sketches to my overall director and began designing with intent of development.</p>
     <div class="image-container-bg">
       <div class="design-row">
-        <div class="placeholder" style="min-width: 140px;"></div>
-        <div class="placeholder" style="min-width: 140px;"></div>
-        <div class="placeholder" style="min-width: 140px;"></div>
-        <div class="placeholder" style="min-width: 140px;"></div>
-        <div class="placeholder" style="min-width: 140px;"></div>
+        <div class="placeholder" style="min-width: 150px;"></div>
+        <div class="placeholder" style="min-width: 150px;"></div>
+        <div class="placeholder" style="min-width: 150px;"></div>
+        <div class="placeholder" style="min-width: 150px;"></div>
+        <div class="placeholder" style="min-width: 150px;"></div>
       </div>
     </div>
   </section>
 
-  <section id="iteration">
+  <section>
     <div class="problem-card">
       <h2>iterative design</h2>
       <p>Due to the time crunch and the high expectations, I opted out of formal testing and utilized iterative design. Each captain meeting I attended, I had my team go through the prototype and give feedback. This cycle continued until refinements were launched.</p>
@@ -237,7 +236,7 @@
     </div>
   </section>
 
-  <section id="reflection">
+  <section>
     <h2>reflection</h2>
     <p>The app was soft-launched on the day of the main event—April 13, 2024—with over 400 users. It performed effectively and the designs were well received by miracle makers, captains, and directors. As a designer, I gained real-world experience in delivering under a tight deadline.</p>
   </section>
