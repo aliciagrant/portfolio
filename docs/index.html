@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alicia's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #c9ada1; 
@@ -17,7 +17,6 @@
 
     body {
       margin: 0;
-      /* Using PT Serif as the primary font */
       font-family: 'PT Serif', 'Times New Roman', Times, serif;
       background-color: var(--bg-color);
       color: var(--text-white);
@@ -26,16 +25,17 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation */
+    /* Navigation - Line centered to the text */
     nav {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       gap: 1.5em;
-      padding: 2em 0;
+      padding: 1.5em 0;
       max-width: 900px;
       margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.4);
-      margin-top: 20px;
+      /* This creates the line directly under the nav items */
+      border-bottom: 1px solid rgba(255,255,255,0.4); 
     }
 
     nav a {
@@ -47,7 +47,7 @@
     /* Header */
     header {
       max-width: 900px;
-      margin: 2em auto 4em;
+      margin: 3em auto 4em;
     }
 
     .script-font {
@@ -61,12 +61,11 @@
       font-weight: normal;
     }
 
-    /* Shifting text past the 'y' */
     header p {
       font-size: 1.25em;
       margin-top: 0.4em;
-      font-style: normal; /* No italics */
-      padding-left: 100px; /* Adjust this to line up with the end of your name */
+      font-style: normal; 
+      padding-left: 100px; 
       max-width: 750px;
     }
 
@@ -84,11 +83,8 @@
       padding: 2.5em;
       text-decoration: none;
       color: white;
-      transition: transform 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    .card:hover { transform: translateY(-5px); }
     .red { background-color: var(--card-red); }
     .brown-light { background-color: var(--card-brown-light); }
     .brown-dark { background-color: var(--card-brown-dark); }
@@ -101,16 +97,8 @@
       margin-bottom: 1.8em;
     }
 
-    .card h2 { 
-      margin: 0; 
-      font-size: 2em; 
-      font-weight: 400;
-    }
-
-    .card p { 
-      margin: 0.6em 0 0; 
-      font-size: 1.1em; 
-    }
+    .card h2 { margin: 0; font-size: 2em; font-weight: 400; }
+    .card p { margin: 0.6em 0 0; font-size: 1.1em; }
 
     /* About Section */
     .about-section {
@@ -131,7 +119,7 @@
     .about-section p {
       line-height: 1.6;
       font-size: 1.2em;
-      margin-bottom: 1.2em;
+      margin-bottom: 1.5em;
     }
 
     /* Buttons */
@@ -143,7 +131,7 @@
 
     .btn {
       border: 1px solid white;
-      padding: 0.7em 1.8em;
+      padding: 0.6em 1.5em;
       border-radius: 12px;
       color: white;
       text-decoration: none;
@@ -165,6 +153,7 @@
       header p { padding-left: 0; }
       header h1 { font-size: 2.8em; }
       .about-section { padding: 2em; }
+      nav { justify-content: center; }
     }
   </style>
 </head>
@@ -172,7 +161,6 @@
 
   <nav>
     <a href="#portfolio">portfolio</a>
-    <a href="#">archives</a>
     <a href="#about">about</a>
     <a href="#">resume</a>
   </nav>
@@ -204,7 +192,11 @@
 
   <section class="about-section" id="about">
     <h2 class="script-font">about me</h2>
-    <p>I am a <strong>Computer Science</strong> student at the University of Florida with a minor in <strong>Psychology</strong>, aspiring to grow in user experience design and product management.</p>
+    <p>I am a <strong>Computer Science</strong> student at the University of Florida with a minor in <strong>Psychology</strong>, aspiring to grow in user experience design and product management. My goal is to enhance my UI/UX, technical, and product strategy skill sets through meaningful opportunities.</p>
+    
+    <p>The "skip intro" button, after hours of binge-watching TV, sparked more than just a moment of appreciation—it was a realization. This small feature inspired me to pursue UX design, showing me how impactful and thoughtful design can improve everyday experiences. Now, I’m dedicated to making strides in a field where I can blend technology, creativity, and empathy.</p>
+    
+    <p>Outside of my academic pursuits, I enjoy reading, writing music, and spending quality time with my little sister and friends.</p>
     
     <div class="buttons">
       <a href="#" class="btn">linkedin</a>
