@@ -25,17 +25,27 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation - Line centered to the text */
+    /* Navigation - Line in-line with links */
     nav {
       display: flex;
-      justify-content: flex-end;
       align-items: center;
-      gap: 1.5em;
-      padding: 1.5em 0;
+      padding: 2.5em 0;
       max-width: 900px;
       margin: 0 auto;
-      /* This creates the line directly under the nav items */
-      border-bottom: 1px solid rgba(255,255,255,0.4); 
+    }
+
+    /* This creates the line that stretches to the left */
+    nav::before {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
+      margin-right: 2em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5em;
     }
 
     nav a {
@@ -47,7 +57,7 @@
     /* Header */
     header {
       max-width: 900px;
-      margin: 3em auto 4em;
+      margin: 2em auto 4em;
     }
 
     .script-font {
@@ -83,6 +93,9 @@
       padding: 2.5em;
       text-decoration: none;
       color: white;
+      /* Added white border to the panels */
+      border: 1px solid white;
+      box-sizing: border-box;
     }
 
     .red { background-color: var(--card-red); }
@@ -108,6 +121,8 @@
       max-width: 900px;
       margin: 5em auto;
       box-sizing: border-box;
+      /* Added white border to about section as well */
+      border: 1px solid white;
     }
 
     .about-section h2 {
@@ -145,7 +160,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 1em;
-      border-top: 1px solid rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
       padding-top: 1.5em;
     }
 
@@ -153,6 +168,7 @@
       header p { padding-left: 0; }
       header h1 { font-size: 2.8em; }
       .about-section { padding: 2em; }
+      nav::before { display: none; } /* Hide the line on small screens to save space */
       nav { justify-content: center; }
     }
   </style>
@@ -160,9 +176,11 @@
 <body>
 
   <nav>
-    <a href="#portfolio">portfolio</a>
-    <a href="#about">about</a>
-    <a href="#">resume</a>
+    <div class="nav-links">
+      <a href="#portfolio">portfolio</a>
+      <a href="#about">about</a>
+      <a href="#">resume</a>
+    </div>
   </nav>
 
   <header>
